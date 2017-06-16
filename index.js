@@ -32,10 +32,19 @@ function validateControl(pesel) {
     return (sum % 10) === 0;
 }
 
-function validatePESEL(pesel) {
-    if (validateCharacters(pesel) && validateBirthdate(pesel) && validateControl(pesel))
+function checkPesel(pesel) {
+    if (validateCharacters(pesel) &&
+        validateBirthdate(pesel) &&
+        validateControl(pesel))
         return true;
     return false;
 }
 
-export default validatePESEL;
+module.exports = {
+    validateCharacters,
+    validateMonth,
+    validateDay,
+    validateBirthdate,
+    validateControl,
+    checkPesel
+}
