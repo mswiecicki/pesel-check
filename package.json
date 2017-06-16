@@ -1,0 +1,26 @@
+{
+  "name": "pesel-check",
+  "version": "1.0.0",
+  "description": "Small module providing function validating PESEL number (Polish personal ID)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4rlekin/pesel-check.git"
+  },
+  "keywords": [
+    "validation",
+    "validator",
+    "pesel",
+    "check",
+    "checker"
+  ],
+  "author": "Marek Święcicki 2017",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/4rlekin/pesel-check/issues"
+  },
+  "homepage": "https://github.com/4rlekin/pesel-check#readme"
+}
