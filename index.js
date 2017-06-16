@@ -7,7 +7,7 @@ function validateCharacters(pesel) {
 function validateMonth(pesel) {
     const monthStr = pesel.substr(2, 2);
 
-    if (monthStr[0] % 2 && monthStr[1] > 2) return false;
+    if (monthStr === '00' || (monthStr[0] % 2 && monthStr[1] > 2) ) return false;
     else return true;
 }
 
