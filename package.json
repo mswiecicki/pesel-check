@@ -1,6 +1,6 @@
 {
   "name": "pesel-check",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Small module providing function validating PESEL number (Polish personal ID)",
   "main": "index.js",
   "scripts": {
