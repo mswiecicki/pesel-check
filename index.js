@@ -17,7 +17,7 @@ function validateDay(pesel) {
     const longMonths = [1,3,5,7,8,10,12];
 
     if (day < 1) return false;
-    if (month === 2) return day <= 28;
+    if (month === 2) return day <= 29;
     if (longMonths.indexOf(month) !== -1) return day <= 31;
     else return day <= 30;
 }
