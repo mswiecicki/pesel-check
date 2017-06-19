@@ -44,11 +44,33 @@ describe('Validator functions', function() {
         });
     });
     describe('#validateDay()', function() {
-        it('should return true if date-part of string is in correct range for given month', function() {});
-        it('should return false in any other case', function() {});
+        it('should return true if date-part of string is in correct range for given month', function() {
+            assert.equal(validateMonth('00011000000'), true);
+            assert.equal(validateMonth('00021200000'), true);
+            assert.equal(validateMonth('00041600000'), true);
+            assert.equal(validateMonth('00080200000'), true);
+            assert.equal(validateMonth('00112400000'), true);
+            assert.equal(validateMonth('00222700000'), true);
+            assert.equal(validateMonth('00453000000'), true);
+        });
+        it('should return false in any other case', function() {
+            assert.equal(validateDay('00013200000'), false);
+            assert.equal(validateDay('00023000000'), false);
+            assert.equal(validateDay('00423000000'), false);
+            assert.equal(validateDay('00523200000'), false);
+            assert.equal(validateDay('00623100000'), false);
+        });
     });
     describe('#validateBirthdate()', function() {
-        it('should return true if whole birthday-part of string is correct', function() {});
+        it('should return true if whole birthday-part of string is correct', function() {
+            assert.equal(validateBirthdate('00011000000'), true);
+            assert.equal(validateBirthdate('00021200000'), true);
+            assert.equal(validateBirthdate('00041600000'), true);
+            assert.equal(validateBirthdate('00080200000'), true);
+            assert.equal(validateBirthdate('00112400000'), true);
+            assert.equal(validateBirthdate('00222700000'), true);
+            assert.equal(validateBirthdate('00453000000'), true);
+        });
         it('should return false in any other case', function() {});
     });
     describe('#validateControl()', function() {
