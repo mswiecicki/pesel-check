@@ -82,12 +82,40 @@ describe('Validator functions', function() {
         });
     });
     describe('#validateControl()', function() {
-        it('should return true if control digit is correct', function() {});
-        it('should return false in any other case', function() {});
+        it('should return true if control digit is correct', function() {
+            assert.equal(isPeselValid('66080404716'), true);
+            assert.equal(isPeselValid('44050372812'), true);
+            assert.equal(isPeselValid('34022407413'), true);
+            assert.equal(isPeselValid('36831847048'), true);
+            assert.equal(isPeselValid('52111515876'), true);
+        });
+        it('should return false in any other case', function() {
+            assert.equal(isPeselValid('66080404710'), false);
+            assert.equal(isPeselValid('44050372810'), false);
+            assert.equal(isPeselValid('34022407410'), false);
+            assert.equal(isPeselValid('36831847040'), false);
+            assert.equal(isPeselValid('52111515870'), false);
+        });
     });
 });
 
 describe('PESEL checking function', function() {
-    it('should return true if PESEL is correct', function() {});
-    it('should return false in any other case', function() {});
+    it('should return false if passed anything other than string', function() {
+        assert.equal(isPeselValid(1234567890), false);
+        assert.equal(isPeselValid(null), false);
+        assert.equal(isPeselValid(), false);
+        assert.equal(isPeselValid({}), false);
+    });
+    it('should return true if PESEL is correct', function() {
+        assert.equal(isPeselValid('70030546351'), true);
+        assert.equal(isPeselValid('21281582702'), true);
+        assert.equal(isPeselValid('30230254832'), true);
+        assert.equal(isPeselValid('38052405313'), true);
+    });
+    it('should return false in any other case', function() {
+        assert.equal(isPeselValid('76328176321'), false);
+        assert.equal(isPeselValid('87514105432'), false);
+        assert.equal(isPeselValid('97812346321'), false);
+        assert.equal(isPeselValid('76578496112'), false);
+    });
 });
