@@ -1,12 +1,13 @@
 "use strict";
 
-const validators = require('../index');
-const validateCharacters = validators.validateCharacters;
-const validateMonth = validators.validateMonth;
-const validateDay = validators.validateDay;
-const validateBirthdate = validators.validateBirthdate;
-const validateControl = validators.validateControl;
-const checkPesel = validators.checkPesel;
+const { 
+    validateCharacters,
+    validateMonth,
+    validateDay,
+    validateBirthdate,
+    validateControl,
+    checkPesel 
+} = require('../index');
 
 const assert = require('assert');
 
@@ -71,7 +72,13 @@ describe('Validator functions', function() {
             assert.equal(validateBirthdate('00222700000'), true);
             assert.equal(validateBirthdate('00453000000'), true);
         });
-        it('should return false in any other case', function() {});
+        it('should return false in any other case', function() {
+            assert.equal(validateBirthdate('00653000000'), false);
+            assert.equal(validateBirthdate('00133000000'), false);
+            assert.equal(validateBirthdate('00023000000'), false);
+            assert.equal(validateBirthdate('00003000000'), false);
+            assert.equal(validateBirthdate('10103200000'), false);
+        });
     });
     describe('#validateControl()', function() {
         it('should return true if control digit is correct', function() {});
