@@ -6,8 +6,9 @@ const {
     _validateDay,
     validateBirthdate,
     validateControl,
-    checkPesel 
-} = require('../index');
+} = require('../lib/validators');
+
+const isPeselValid = require('../index')
 
 const assert = require('assert');
 
