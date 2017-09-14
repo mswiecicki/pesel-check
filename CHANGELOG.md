@@ -1,3 +1,8 @@
+# 2.0.1
+
+Fix bug where leap years would not be accounted for during date validation
+
+
 # 2.0.0
 
 **BREAKING CHANGE!**

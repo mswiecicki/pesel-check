@@ -46,6 +46,18 @@ describe('Validator functions', function() {
         });
     });
     describe('#validateDay()', function() {
+        it('should correctly handle leap years', function() {
+            assert.equal(_validateDay('24822900000'), true);
+            assert.equal(_validateDay('60022900000'), true);
+            assert.equal(_validateDay('44222900000'), true);
+            assert.equal(_validateDay('88422900000'), true);
+            assert.equal(_validateDay('52622900000'), true);
+            assert.equal(_validateDay('27822900000'), false);
+            assert.equal(_validateDay('69022900000'), false);
+            assert.equal(_validateDay('45222900000'), false);
+            assert.equal(_validateDay('83422900000'), false);
+            assert.equal(_validateDay('51622900000'), false);
+        });
         it('should return true if date-part of string is in correct range for given month', function() {
             assert.equal(_validateDay('00011000000'), true);
             assert.equal(_validateDay('00021200000'), true);
