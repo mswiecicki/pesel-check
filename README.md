@@ -1,4 +1,6 @@
 # PESEL check
+> **DONE (no more changes to the project anticipated)**  
+> _unless some bugs or feature requests surface in the future_
 
 Small package aiming to do one thing, and one thing only: check PESEL.
 
