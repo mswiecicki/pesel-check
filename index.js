@@ -2,12 +2,6 @@
 
 const { validateCharacters, validateBirthdate, validateControl } = require('./lib/validators');
 
-function isPeselValid(pesel) {
-    if (validateCharacters(pesel) &&
-        validateBirthdate(pesel) &&
-        validateControl(pesel))
-        return true;
-    return false;
-}
+const isPeselValid = pesel => validateCharacters(pesel) && validateBirthdate(pesel) && validateControl(pesel);
 
 module.exports = isPeselValid;
