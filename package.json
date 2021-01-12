@@ -17,6 +17,7 @@
     "check",
     "checker"
   ],
+  "types": "index.d.ts",
   "author": "Marek Święcicki 2017",
   "license": "MIT",
   "bugs": {
